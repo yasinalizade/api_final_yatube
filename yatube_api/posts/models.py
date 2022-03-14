@@ -39,7 +39,7 @@ class Comment(models.Model):
         'Дата добавления', auto_now_add=True, db_index=True)
 
     def __str__(self) -> str:
-        return super().__str__()
+        return f'Комментарий {self.text[:5]} к посту {self.post.id}'
 
 
 class Follow(models.Model):
@@ -59,4 +59,4 @@ class Follow(models.Model):
         ]
 
     def __str__(self) -> str:
-        return super().__str__()
+        return f'{self.user}: {self.following}'
